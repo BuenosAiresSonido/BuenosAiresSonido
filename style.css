@@ -50,12 +50,13 @@ button{
     width:280px;
     margin:25px auto 10px auto;
 
-    background:#25D366;
+background: #1E9E52;
     color:white;
 
     border:none;
-    border-radius:10px;
-
+border-radius:16px;
+box-shadow:0 8px 20px rgba(37,211,102,.25);
+background: linear-gradient(180deg,#2ACF69,#1E9E52);
     padding:15px 20px;
 
     font-size:18px;
