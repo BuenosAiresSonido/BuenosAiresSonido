@@ -131,3 +131,41 @@ td,th{padding:8px;border-bottom:1px solid #333;}
 .titulo-principal{
     text-align:center;
 }
+
+.botones{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.btn-limpiar,
+.btn-whatsapp{
+
+    flex:1;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.btn-limpiar{
+
+    background:#555;
+
+    color:white;
+}
+
+.btn-whatsapp{
+
+    background:#1E9E52;
+
+    color:white;
+}

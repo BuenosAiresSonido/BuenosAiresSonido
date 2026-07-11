@@ -210,3 +210,19 @@ function generarWhatsApp(){
 }
 
 render();
+
+function limpiarTodo(){
+
+    // Vaciar formulario
+    document.querySelectorAll("input").forEach(input=>{
+        input.value="";
+    });
+
+    document.querySelector("textarea").value="";
+
+    // Reiniciar cantidades
+    items=[];
+
+    render();
+
+}
