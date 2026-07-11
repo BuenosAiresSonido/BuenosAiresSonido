@@ -71,19 +71,15 @@ productos.forEach((producto, indice) => {
 
             </div>
 
-            <div>
+<div class="controles">
 
-                <button onclick="restar(${indice})">-</button>
+    <button class="btn-cantidad" onclick="restar(${indice})">−</button>
 
-                <span style="display:inline-block;width:30px;text-align:center">
+    <span class="cantidad">${cantidad}</span>
 
-                    ${cantidad}
+    <button class="btn-cantidad" onclick="sumar(${indice})">+</button>
 
-                </span>
-
-                <button onclick="sumar(${indice})">+</button>
-
-            </div>
+</div>
 
         </div>
     `;
