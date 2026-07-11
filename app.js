@@ -173,7 +173,7 @@ function generarWhatsApp(){
     const observaciones=datos[4].value;
 
     let texto=`*BUENOS AIRES SONIDO*%0A`;
-    texto+=`Presupuesto%0A%0A`;
+    texto+=`Solicitud de Presupuesto%0A%0A`;
 
     if(nombre) texto+=`*Cliente:* ${nombre}%0A`;
     if(telefono) texto+=`*Teléfono:* ${telefono}%0A`;
@@ -203,7 +203,7 @@ function generarWhatsApp(){
 
     }
 
-    texto+=`Gracias por elegir Buenos Aires Sonido.`;
+    texto+=`Tu Sonidista Amigo.`;
 
     window.open("https://wa.me/?text="+texto,"_blank");
 
@@ -224,17 +224,17 @@ function generarWhatsApp(){
     let totalGeneral = 0;
 
     let mensaje = "*BUENOS AIRES SONIDO*%0A";
-    mensaje += "*PRESUPUESTO*%0A%0A";
+    mensaje += "*Solicitud de Presupuesto*%0A%0A";
 
-    if(nombre) mensaje += "*Cliente:* " + nombre + "%0A";
-    if(telefono) mensaje += "*Teléfono:* " + telefono + "%0A";
-    if(lugar) mensaje += "*Lugar:* " + lugar + "%0A";
+    if(nombre) mensaje += " *Cliente:* " + nombre + "%0A";
+    if(telefono) mensaje += " *Teléfono:* " + telefono + "%0A";
+    if(lugar) mensaje += " *Lugar:* " + lugar + "%0A";
 
     if(fecha){
 
         const f = fecha.split("-");
 
-        mensaje += "*Fecha:* " + f[2] + "/" + f[1] + "/" + f[0] + "%0A";
+        mensaje += " *Fecha:* " + f[2] + "/" + f[1] + "/" + f[0] + "%0A";
 
     }
 
@@ -278,7 +278,7 @@ totalGeneral.toLocaleString("es-AR") +
 
     }
 
-    mensaje += "%0A*TU SONIDISTA AMIGO*";
+    mensaje += "%0AGracias por elegir *Buenos Aires Sonido* 🎵";
 
     window.open(
         "https://wa.me/?text=" + mensaje,
