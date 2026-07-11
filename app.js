@@ -4,8 +4,8 @@ const productos = [
 {categoria:"BAFLES",nombre:'Par de bafles 15"',precio:30000},
 {categoria:"BAFLES",nombre:'Bafle potenciado 12" (Monitor)',precio:30000},
 
-{categoria:"POTENCIAS",nombre:'(Para juego 12")',precio:25000},
-{categoria:"POTENCIAS",nombre:'(Para juego 15")',precio:25000},
+{categoria:"POTENCIAS",nombre:'Para juego 12"',precio:25000},
+{categoria:"POTENCIAS",nombre:'Para juego 15"',precio:25000},
 
 {categoria:"MICRÓFONOS",nombre:"Micrófono de mano con cable",precio:5000},
 {categoria:"MICRÓFONOS",nombre:"Micrófono de instrumento con cable",precio:5000},
