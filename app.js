@@ -70,6 +70,11 @@ let categoriaActual = "";
 
 productos.forEach((producto, indice) => {
 
+    // No mostrar los conceptos fijos en la lista de equipamiento
+if (producto.fijo) {
+    return;
+}
+
     if(producto.categoria !== categoriaActual){
 
         categoriaActual = producto.categoria;
@@ -127,19 +132,21 @@ productos.forEach((producto, indice) => {
 
         suma+=subtotal;
 
-        carrito.innerHTML+=`
+const cantidadMostrar = item.fijo ? "" : item.cantidad;
 
-        <tr>
+carrito.innerHTML += `
 
-            <td>${item.nombre}</td>
+<tr>
 
-            <td>${item.cantidad}</td>
+    <td>${item.nombre}</td>
 
-            <td>$${subtotal.toLocaleString("es-AR")}</td>
+    <td>${cantidadMostrar}</td>
 
-        </tr>
+    <td>$${subtotal.toLocaleString("es-AR")}</td>
 
-        `;
+</tr>
+
+`;
 
     });
 
