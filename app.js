@@ -240,15 +240,6 @@ function generarWhatsApp(){
 }
 
 render();
-
-function limpiarTodo(){
-
-    // Mantener solamente los conceptos fijos
-
-    items = items.filter(item => item.fijo);
-
-    render();
-
 function limpiarTodo(){
 
     items = [
@@ -272,3 +263,4 @@ function limpiarTodo(){
 
     render();
 
+}
