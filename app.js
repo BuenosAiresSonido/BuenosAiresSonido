@@ -36,7 +36,7 @@ let items = [
 
 {
     categoria:"CONCEPTOS FIJOS",
-    nombre:"Operador de sonido",
+    nombre:"Operador de sonido 2 Horas",
     precio:50000,
     cantidad:1,
     fijo:true
