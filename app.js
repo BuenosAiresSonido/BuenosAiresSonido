@@ -21,7 +21,12 @@ const productos = [
 {categoria:"ACCESORIOS",nombre:"Pie de micrófono",precio:4000},
 
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Main L y R",precio:30000},
-{categoria:"GRABACIÓN DEL SHOW",nombre:"Multitrack",precio:50000}
+{categoria:"GRABACIÓN DEL SHOW",nombre:"Multitrack",precio:50000},
+
+{categoria:"CONCEPTOS FIJOS",nombre:"Operador de sonido",precio:50000,fijo:true},
+{categoria:"CONCEPTOS FIJOS",nombre:"Traslado",precio:50000,fijo:true}
+
+];
 
 ];
 
