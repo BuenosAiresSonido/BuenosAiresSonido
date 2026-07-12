@@ -1,3 +1,22 @@
+
+// ===========================
+// CONCEPTOS FIJOS
+// ===========================
+
+const conceptosFijos = [
+
+    {
+        nombre: "Operador de sonido (2 Horas)",
+        precio: 40000
+    },
+
+    {
+        nombre: "Traslado",
+        precio: 60000
+    }
+
+];
+
 const productos = [
 
 {categoria:"BAFLES",nombre:'Par de bafles 12"',precio:30000},
@@ -23,33 +42,25 @@ const productos = [
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Main L y R",precio:30000},
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Multitrack",precio:50000},
 
-{categoria:"CONCEPTOS FIJOS",nombre:"Operador de sonido 2 Horas",precio:30000,fijo:true},
-{categoria:"CONCEPTOS FIJOS",nombre:"Traslado",precio:50000,fijo:true}
-
+...conceptosFijos.map(c => ({
+    categoria: "CONCEPTOS FIJOS",
+    nombre: c.nombre,
+    precio: c.precio,
+    fijo: true
+}))
 ];
 
 const lista = document.getElementById("lista");
 const carrito = document.getElementById("carrito");
 const total = document.getElementById("total");
 
-let items = [
-
-{
-    categoria:"CONCEPTOS FIJOS",
-    nombre:"Operador de sonido 2 Horas",
-    precio:30000,
-    cantidad:1,
-    fijo:true
-},
-{
-    categoria:"CONCEPTOS FIJOS",
-    nombre:"Traslado",
-    precio:50000,
-    cantidad:1,
-    fijo:true
-}
-
-];
+let items = conceptosFijos.map(c => ({
+    categoria: "CONCEPTOS FIJOS",
+    nombre: c.nombre,
+    precio: c.precio,
+    cantidad: 1,
+    fijo: true
+}));
 
 function render() {
 
@@ -242,24 +253,13 @@ function generarWhatsApp(){
 render();
 function limpiarTodo(){
 
-    items = [
-
-        {
-            categoria:"CONCEPTOS FIJOS",
-            nombre:"Operador de sonido 2 Horas",
-            precio:30000,
-            cantidad:1,
-            fijo:true
-        },
-        {
-            categoria:"CONCEPTOS FIJOS",
-            nombre:"Traslado",
-            precio:50000,
-            cantidad:1,
-            fijo:true
-        }
-
-    ];
+    items = conceptosFijos.map(c => ({
+        categoria: "CONCEPTOS FIJOS",
+        nombre: c.nombre,
+        precio: c.precio,
+        cantidad: 1,
+        fijo: true
+    }));
 
     render();
 
