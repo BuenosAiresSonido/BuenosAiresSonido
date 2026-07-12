@@ -6,12 +6,12 @@
 const conceptosFijos = [
 
     {
-        nombre: "Operador de sonido (2 Horas)",
+        nombre: "Operador de Sonido 2 Horas",
         precio: 40000
     },
 
     {
-        nombre: "Traslado zona (Norte / Oeste)",
+        nombre: "Traslado zona Norte/Oeste",
         precio: 60000
     }
 
@@ -23,12 +23,14 @@ const productos = [
 {categoria:"BAFLES",nombre:'Par de bafles 15"',precio:30000},
 {categoria:"BAFLES",nombre:'Bafle potenciado 12" (Monitor)',precio:30000},
 
-{categoria:"POTENCIAS",nombre:'Potencia Para Parlantes de 12"',precio:25000},
-{categoria:"POTENCIAS",nombre:'Potencia Para Parlantes de 15"',precio:25000},
-{categoria:"POTENCIAS",nombre:'Potencia Para los 4 Parlantes ',precio:50000},
+{categoria:"POTENCIAS",nombre:'Potencia Para bafles de 12"',precio:25000},
+{categoria:"POTENCIAS",nombre:'Potencia Para bafles de 15"',precio:25000},
+{categoria:"POTENCIAS",nombre:'Potencia Para los 4 bafles ',precio:50000},
 
 {categoria:"MICRÓFONOS",nombre:"Micrófono de mano con cable",precio:5000},
 {categoria:"MICRÓFONOS",nombre:"Micrófono de instrumento con cable",precio:5000},
+
+{categoria:"ACCESORIOS",nombre:"Pie de micrófono",precio:4000},
 
 {categoria:"PROCESADORES",nombre:"Virtualizer 2000 (Behringer)",precio:10000},
 {categoria:"PROCESADORES",nombre:"EQ 15x2 (Moon)",precio:10000},
@@ -36,8 +38,6 @@ const productos = [
 
 {categoria:"CONSOLAS",nombre:"Consola Digital 8 CH",precio:40000},
 {categoria:"CONSOLAS",nombre:"Consola Analógica 16 CH",precio:60000},
-
-{categoria:"ACCESORIOS",nombre:"Pie de micrófono",precio:4000},
 
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Main L y R",precio:30000},
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Multitrack",precio:50000},
