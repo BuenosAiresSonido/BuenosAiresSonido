@@ -172,7 +172,7 @@ function generarWhatsApp(){
     const fecha=datos[3].value;
     const observaciones=datos[4].value;
 
-    let texto=`*     BUENOS AIRES SONIDO*%0A`;
+    let texto=`    *BUENOS AIRES SONIDO*%0A`;
     texto+=`Solicitud de Presupuesto%0A%0A`;
 
     if(nombre) texto+=`*Cliente:* ${nombre}%0A`;
@@ -203,7 +203,7 @@ function generarWhatsApp(){
 
     }
 
-    texto+=`Tu Sonidista Amigo.`;
+ 
 
     window.open("https://wa.me/?text="+texto,"_blank");
 
