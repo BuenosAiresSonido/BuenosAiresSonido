@@ -23,7 +23,7 @@ const productos = [
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Main L y R",precio:30000},
 {categoria:"GRABACIÓN DEL SHOW",nombre:"Multitrack",precio:50000},
 
-{categoria:"CONCEPTOS FIJOS",nombre:"Operador de sonido (2 Horas)",precio:30000,fijo:true},
+{categoria:"CONCEPTOS FIJOS",nombre:"Operador de sonido 2 Horas",precio:30000,fijo:true},
 {categoria:"CONCEPTOS FIJOS",nombre:"Traslado",precio:50000,fijo:true}
 
 ];
