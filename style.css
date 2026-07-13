@@ -191,15 +191,18 @@ td,th{padding:8px;border-bottom:1px solid #333;}
     color:white;
 }
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
     .botones{
-        flex-direction:column;
+        flex-direction:row;
+        gap:10px;
     }
 
     .btn-limpiar,
     .btn-whatsapp{
-        width:100%;
+        width:50%;
+        font-size:15px;
+        padding:14px 8px;
     }
 
 }
