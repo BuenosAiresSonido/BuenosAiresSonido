@@ -9,8 +9,10 @@ color:white;
     height:140px;
 
     background-image: url("img/banner.png");
-    background-size: cover;
-   background-position:15% center;
+   background-size: contain;
+background-repeat: no-repeat;
+background-color:#0b0b0b;
+    background-position: center;
 
     display:flex;
     justify-content:center;
