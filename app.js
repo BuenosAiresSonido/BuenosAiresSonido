@@ -238,7 +238,15 @@ function generarWhatsApp(){
 
         suma+=subtotal;
 
-        texto+=`${item.nombre} x${item.cantidad} - $${subtotal.toLocaleString("es-AR")}%0A`;
+  if(item.fijo){
+
+    texto += `${item.nombre} - $${subtotal.toLocaleString("es-AR")}%0A`;
+
+}else{
+
+    texto += `${item.nombre} x${item.cantidad} - $${subtotal.toLocaleString("es-AR")}%0A`;
+
+}
 
     });
 
