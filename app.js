@@ -54,6 +54,65 @@ const lista = document.getElementById("lista");
 const carrito = document.getElementById("carrito");
 const total = document.getElementById("total");
 
+// ===========================
+// COMBOS INTELIGENTES
+// ===========================
+
+const combos = {
+
+    "50-solista": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Potencia Para bafles de 12"', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:1 },
+        { nombre:'Pie de micrófono', cantidad:1 }
+    ],
+
+    "50-duo": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Potencia Para bafles de 12"', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:2 },
+        { nombre:'Pie de micrófono', cantidad:2 }
+    ],
+
+    "50-trio": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Potencia Para bafles de 12"', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:3 },
+        { nombre:'Pie de micrófono', cantidad:3 }
+    ],
+
+    "100-solista": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Par de bafles 15"', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:1 },
+        { nombre:'Pie de micrófono', cantidad:1 }
+    ],
+
+    "100-duo": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Par de bafles 15"', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:2 },
+        { nombre:'Pie de micrófono', cantidad:2 }
+    ],
+
+    "100-trio": [
+        { nombre:'Par de bafles 12"', cantidad:1 },
+        { nombre:'Par de bafles 15"', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Consola Digital 8 CH', cantidad:1 },
+        { nombre:'Micrófono de mano con cable', cantidad:3 },
+        { nombre:'Pie de micrófono', cantidad:3 }
+    ]
+
+};
+
 let items = conceptosFijos.map(c => ({
     categoria: "CONCEPTOS FIJOS",
     nombre: c.nombre,
@@ -61,6 +120,7 @@ let items = conceptosFijos.map(c => ({
     cantidad: 1,
     fijo: true
 }));
+
 
 function render() {
 
@@ -126,29 +186,49 @@ if (producto.fijo) {
 
     let suma=0;
 
-    items.forEach(item=>{
+items.forEach(item => {
 
-        const subtotal=item.precio*item.cantidad;
+    const subtotal = item.precio * item.cantidad;
 
-        suma+=subtotal;
+    suma += subtotal;
 
-const cantidadMostrar = item.fijo ? "" : item.cantidad;
+    let controles = "";
 
-carrito.innerHTML += `
+    if(!item.fijo){
 
-<tr>
+        const indiceProducto = productos.findIndex(
+            p => p.nombre === item.nombre
+        );
 
-    <td>${item.nombre}</td>
+        controles = `
+            <div class="controles-resumen">
 
-    <td>${cantidadMostrar}</td>
+                <button class="btn-mini" onclick="restar(${indiceProducto})">−</button>
 
-    <td>$${subtotal.toLocaleString("es-AR")}</td>
+                <span class="cantidad-mini">${item.cantidad}</span>
 
-</tr>
+                <button class="btn-mini" onclick="sumar(${indiceProducto})">+</button>
 
-`;
+            </div>
+        `;
 
-    });
+    }
+
+    carrito.innerHTML += `
+
+    <tr>
+
+        <td>${item.nombre}</td>
+
+        <td>${controles}</td>
+
+        <td>$${subtotal.toLocaleString("es-AR")}</td>
+
+    </tr>
+
+    `;
+
+});
 
     total.textContent=suma.toLocaleString("es-AR");
 
@@ -204,6 +284,8 @@ function restar(indice){
         }
 
     }
+
+
 
     render();
 
@@ -275,6 +357,83 @@ function limpiarTodo(){
         cantidad: 1,
         fijo: true
     }));
+
+    // Apagar el interruptor de Multitrack
+    document.getElementById("chkMultitrack").checked = false;
+
+    render();
+
+}
+
+    render();
+
+
+// ===========================
+// MULTITRACK
+// ===========================
+
+function toggleMultitrack(){
+
+    const check = document.getElementById("chkMultitrack");
+
+    if(check.checked){
+
+        const producto = productos.find(p => p.nombre === "Multitrack");
+
+        if(producto){
+
+            items.push({
+
+                ...producto,
+
+                cantidad:1
+
+            });
+
+        }
+
+    }else{
+
+        items = items.filter(i => i.nombre !== "Multitrack");
+
+    }
+
+    render();
+
+}
+
+// ===========================
+// CARGAR COMBO
+// ===========================
+
+function cargarCombo(nombreCombo){
+
+    // Mantener únicamente los conceptos fijos
+    items = items.filter(item => item.fijo);
+
+    // Buscar el combo seleccionado
+    const combo = combos[nombreCombo];
+
+    if(!combo) return;
+
+    // Agregar los productos del combo
+    combo.forEach(productoCombo => {
+
+        const producto = productos.find(p => p.nombre === productoCombo.nombre);
+
+        if(producto){
+
+            items.push({
+
+                ...producto,
+
+                cantidad: productoCombo.cantidad
+
+            });
+
+        }
+
+    });
 
     render();
 

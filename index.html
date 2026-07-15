@@ -31,15 +31,77 @@
 <textarea placeholder="Observaciones"></textarea>
 </section>
 
-<section class="productos">
+<section class="combos">
+
+<h2>Combos Inteligentes</h2>
+
+<div class="combo-grid">
+
+<button class="combo-btn" onclick="cargarCombo('50-solista')">
+Combo 50 Personas (Solista)
+</button>
+
+<button class="combo-btn" onclick="cargarCombo('50-duo')">
+Combo 50 Personas (Duos)
+</button>
+
+<button class="combo-btn" onclick="cargarCombo('50-trio')">
+Combo 50 Personas (Trios)
+</button>
+
+<button class="combo-btn" onclick="cargarCombo('100-solista')">
+Combo 100 Personas (Solista)
+</button>
+
+<button class="combo-btn" onclick="cargarCombo('100-duo')">
+Combo 100 Personas (Duos)
+</button>
+
+<button class="combo-btn" onclick="cargarCombo('100-trio')">
+Combo 100 Personas (Trios)
+</button>
+
+</div>
+
+</section>
+
+
+<section class="productos" style="display:none;">
+
 <h2>Eleji el Equipamiento</h2>
+
 <div id="lista"></div>
+
 </section>
 
 <section class="resumen">
 <h2>Resumen</h2>
 <table>
 <thead><tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr></thead>
+
+<tr>
+
+<td>Grabación Multitrack 8 Canales limpios + Main mix</td>
+
+<td style="text-align:center;">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="chkMultitrack"
+onchange="toggleMultitrack()">
+
+<span class="slider"></span>
+
+</label>
+
+</td>
+
+<td>$50.000</td>
+
+</tr>
+
 <tbody id="carrito"></tbody>
 </table>
 <h3>Total: $<span id="total">0</span></h3>
