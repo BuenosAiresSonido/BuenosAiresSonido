@@ -728,6 +728,7 @@ function cargarCombo(nombreCombo, boton){
 
     });
 
+    document.getElementById("resumen").style.display = "block";
   
     render();
 
