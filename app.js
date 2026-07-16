@@ -27,7 +27,7 @@ const productos = [
 
 {categoria:"POTENCIAS",nombre:'Potencia Para bafles de 12"',precio:25000},
 {categoria:"POTENCIAS",nombre:'Potencia Para bafles de 15"',precio:25000},
-{categoria:"POTENCIAS",nombre:'Potencia Para los 4 bafles ',precio:50000},
+{categoria:"POTENCIAS",nombre:'Potencia Para los 4 bafles',precio:50000},
 
 {categoria:"MICRÓFONOS",nombre:"Micrófono de mano con cable",precio:5000},
 {categoria:"MICRÓFONOS",nombre:"Micrófono de instrumento con cable",precio:5000},
@@ -87,7 +87,7 @@ const combos = {
     "100-solista": [
         { nombre:'Par de bafles 12"', cantidad:1 },
         { nombre:'Par de bafles 15"', cantidad:1 },
-        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles', cantidad:1 },
         { nombre:'Consola Digital 8 CH', cantidad:1 },
         { nombre:'Micrófono de mano con cable', cantidad:1 },
         { nombre:'Pie de micrófono', cantidad:1 }
@@ -96,7 +96,7 @@ const combos = {
     "100-duo": [
         { nombre:'Par de bafles 12"', cantidad:1 },
         { nombre:'Par de bafles 15"', cantidad:1 },
-        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles', cantidad:1 },
         { nombre:'Consola Digital 8 CH', cantidad:1 },
         { nombre:'Micrófono de mano con cable', cantidad:2 },
         { nombre:'Pie de micrófono', cantidad:2 }
@@ -105,7 +105,7 @@ const combos = {
     "100-trio": [
         { nombre:'Par de bafles 12"', cantidad:1 },
         { nombre:'Par de bafles 15"', cantidad:1 },
-        { nombre:'Potencia Para los 4 bafles ', cantidad:1 },
+        { nombre:'Potencia Para los 4 bafles', cantidad:1 },
         { nombre:'Consola Digital 8 CH', cantidad:1 },
         { nombre:'Micrófono de mano con cable', cantidad:3 },
         { nombre:'Pie de micrófono', cantidad:3 }
@@ -505,7 +505,7 @@ function generarWhatsApp(){
 
     "Grabación Multitrack":"G. Multi",
 
-    "Operador de Sonido 2 Horas":"Operador",
+    "Operador de Sonido por Hora":"Operador",
 
     "Traslado zona Norte/Oeste":"Traslado"
 
@@ -531,7 +531,7 @@ if(item.manual && !tituloManualMostrado){
 
 const nombre = nombresWhats[item.nombre] || item.nombre;
 
-const cantidad = item.fijo ? "1" : item.cantidad.toString();
+const cantidad = item.cantidad.toString();
 
 const precio = "$" + subtotal.toLocaleString("es-AR");
 
@@ -550,7 +550,7 @@ texto += `${nombre} ${cantidad} $${subtotal.toLocaleString("es-AR")}%0A`;
 let incluidos = "";
 
 if(document.getElementById("chkVirtualizer").checked){
-    incluidos += `✅ Procesador Virtualizer 2000 (Behringer)%0A`;
+    incluidos += `✅ Procesador V.2000%0A`;
 }
 
 if(document.getElementById("chkEQ").checked){
