@@ -20,14 +20,17 @@
 <header class="hero"></header>
 
 <main>
-<section class="cliente">
+<section class="cliente" id="inicio">
 <h2 class="titulo-principal">ARMA TU PRESUPUESTO</h2>
 <h2>Info del evento y Contacto</h2>
 <input placeholder="Nombre">
 <input placeholder="Teléfono">
+<div id="puntoScroll"></div>
 <input placeholder="Lugar del evento">
 <label class="etiqueta">Fecha del evento</label>
 <input type="date">
+
+
 <textarea placeholder="Observaciones"></textarea>
 </section>
 <section class="combos">
@@ -64,7 +67,7 @@
 
 </section>
 
-<section class="resumen">
+<section class="resumen" id="resumen" style="display:none;">
 <h2>Resumen</h2>
 
 <h3 id="tituloCombo" style="color:#66b3ff; margin-top:5px; margin-bottom:15px;">
@@ -151,9 +154,10 @@ onchange="toggleMultitrack()">
 
 <div class="botones">
 
-<button class="btn-limpiar" onclick="limpiarTodo()">
+<button class="btn-limpiar" onclick="limpiarConScroll()">
     Limpiar
 </button>
+
 
     <button class="btn-whatsapp" onclick="generarWhatsApp()">
         Enviar WhatsApp

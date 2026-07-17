@@ -1,3 +1,8 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -512,4 +517,17 @@ transform:translateX(22px);
 
     background:#dc3545;
 
+}
+
+.resumen{
+    opacity:1;
+    transition:opacity 0.3s ease;
+}
+
+.resumen{
+    transition: opacity 0.25s ease;
+}
+
+.resumen.oculto{
+    opacity: 0;
 }
