@@ -647,36 +647,35 @@ setTimeout(() => {
 // ===========================
 // MULTITRACK
 // ===========================
-
 function toggleMultitrack(){
 
     const check = document.getElementById("chkMultitrack");
 
     if(check.checked){
 
-       const producto = productos.find(p => p.nombre === "Grabación Multitrack");
+        const producto = productos.find(p => p.nombre === "Grabación Multitrack");
 
-        if(producto){
+        const existe = items.some(i => i.nombre === "Grabación Multitrack");
+
+        if(producto && !existe){
 
             items.push({
-
                 ...producto,
-
-                cantidad:1
-
+                cantidad: 1
             });
 
         }
 
     }else{
 
-        items = items.filter(i => i.nombre !== "Multitrack");
+        items = items.filter(i => i.nombre !== "Grabación Multitrack");
 
     }
 
     render();
 
 }
+
 // ===========================
 // CARGAR COMBO
 // ===========================
